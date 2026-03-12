@@ -1,7 +1,7 @@
 {
-  "name": "mercatto-whatsapp-bot",
+  "name": "villa-whatsapp-bot",
   "version": "1.0.0",
-  "description": "Bot WhatsApp Mercatto Delícia com OpenAI e Supabase",
+  "description": "Bot WhatsApp Villa Gourmet com OpenAI e Supabase",
   "main": "index.js",
   "type": "commonjs",
   "dependencies": {
