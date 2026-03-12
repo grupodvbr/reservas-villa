@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     const completion = await openai.responses.create({
       model: "gpt-4.1-mini",
       input: `
-Você é o assistente de reservas do restaurante Mercatto Delícia.
+Você é o assistente de reservas do restaurante Villa Gourmet e Churrascada.
 
 Seu trabalho é ajudar clientes com:
 
@@ -28,10 +28,8 @@ Seu trabalho é ajudar clientes com:
 
 Locais disponíveis:
 Sala VIP 1
-Sala VIP 2
-Sacada
-Salão Central
-
+Villa Gourmet
+Vila Churrascada
 Cliente disse:
 ${mensagem}
 
