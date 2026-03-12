@@ -1429,7 +1429,7 @@ const inicio =
 const fim =
 `${ano}-${String(mes+2).padStart(2,'0')}-01`
 const {data,error} = await supabaseClient
-.from("reservas_mercatto")
+.from("reservas_villa")
 .select("*")
 .gte("datahora",inicio)
 .lt("datahora",fim)
@@ -1445,7 +1445,7 @@ async cadastrar(payload){
 delete payload.id
 
 const {error} = await supabaseClient
-.from("reservas_mercatto")
+.from("reservas_villa")
 .insert(payload)
 
 if(error)
@@ -1458,7 +1458,7 @@ return {ok:true,message:"Reserva salva"}
 async atualizar(id,payload){
 
 const {error} = await supabaseClient
-.from("reservas_mercatto")
+.from("reservas_villa")
 .update(payload)
 .eq("id",id)
 
@@ -1472,7 +1472,7 @@ return {ok:true,message:"Atualizado"}
 async concluir(id,valorFinalPago){
 
 const {error} = await supabaseClient
-.from("reservas_mercatto")
+.from("reservas_villa")
 .update({
 status:"Concluída",
 valorFinalPago:valorFinalPago
@@ -1493,7 +1493,7 @@ return {ok:false,message:"ID inválido"}
 }
 
 const {data,error} = await supabaseClient
-.from("reservas_mercatto")
+.from("reservas_villa")
 .delete()
 .eq("id",String(id))
 .select()
@@ -2443,7 +2443,7 @@ const id = select.dataset.id
 const novoStatus = select.value
 
 const resp = await supabaseClient
-.from("reservas_mercatto")
+.from("reservas_villa")
 .update({status:novoStatus})
 .eq("id",id)
 
